@@ -20,7 +20,7 @@ function Cover({ onOpenCard }) {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white"
+      className="min-h-screen flex items-start md:items-center justify-center pt-8 md:pt-0 relative overflow-hidden bg-white"
       style={{}}
     >
       {/* Overlay trắng trong suốt để chữ dễ đọc */}
