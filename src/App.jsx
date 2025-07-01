@@ -100,7 +100,7 @@ function App() {
           animation: slideInLeft 1.2s cubic-bezier(.77,0,.18,1) both;
         }
       `}</style>
-      <audio ref={envelopeAudioRef} src="https://media.vocaroo.com/mp3/1nGEVwVF4DFY" preload="auto" loop />
+      <audio ref={envelopeAudioRef} src="https://media.vocaroo.com/mp3/11pqNgcn4z0B" preload="auto" loop />
       <audio ref={cardAudioRef} src="https://media.vocaroo.com/mp3/1fJ7Gnk58btp" preload="auto" loop />
       
       {!isEnvelopeOpen && <Envelope onOpen={handleEnvelopeOpen} onPlayMusic={handlePlayMusic} />}

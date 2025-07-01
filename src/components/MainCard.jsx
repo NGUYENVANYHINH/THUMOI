@@ -86,7 +86,7 @@ function MainCard({ userInfo }) {
           </div>
           <div className="flex flex-col items-center">
             <h1 className="text-sm md:text-base font-bold text-white">TRƯỜNG ĐẠI HỌC QUY NHƠN</h1>
-            <p className="text-xs md:text-sm text-white">Khoa Công nghệ thông tin</p>
+            <p className="text-xs md:text-sm font-bold text-white">Khoa Công nghệ thông tin</p>
           </div>
         </div>
 
@@ -112,7 +112,7 @@ function MainCard({ userInfo }) {
                 src="https://i.postimg.cc/ht63ppkV/avaata.jpg" 
                 alt="Ảnh đại diện tân cử nhân" 
                 className="w-28 h-28 md:w-36 md:h-36 rounded-full shadow-lg object-cover absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                style={{ objectPosition: 'center 40%' }}
+                style={{ objectPosition: 'center top' }}
               />
               <img
                 src="https://i.postimg.cc/jS1Pf1pY/OPSKPI0-Photoroom.png"
@@ -165,7 +165,7 @@ function MainCard({ userInfo }) {
           <div className="flex-1 bg-white/10 backdrop-blur-md rounded-r-2xl shadow-lg p-4 flex flex-col items-center justify-center">
             <div className="font-bold text-base md:text-lg mb-2 bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent">Địa điểm</div>
             <div className="flex items-center justify-center gap-2 mb-1">
-              <span className="font-extrabold text-2xl md:text-3xl bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent">Hội trường B</span>
+              <span className="font-extrabold text-xl md:text-2xl bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent">Hội trường B</span>
             </div>
             <div className="text-sm md:text-base text-center text-white font-normal">
               <div>Đại học Quy Nhơn</div>
@@ -187,30 +187,48 @@ function MainCard({ userInfo }) {
           <span className="font-bold text-white">Lưu ý: </span>
           <span className="text-white">Đừng quên giữ gìn cẩn thận tài sản cá nhân của mình trong ngày hôm đó nhé, để ngày vui trọn vẹn hơn.</span>
         </div>
-        {/* Thông tin liên lạc */}
+        {/* Thông tin liên hệ */}
         <div className={`mt-6 text-left ${sectionClass(6)}`}> {/* idx 6 dùng lại */}
-          <div className="font-bold text-white mb-2">Thông tin liên lạc:</div>
-          <div className="flex flex-row gap-4 items-center">
-            {/* Zalo */}
-            <a href="#" target="_blank" rel="noopener noreferrer" title="Zalo">
-              <img src="https://img.icons8.com/color/48/000000/zalo.png" alt="Zalo" className="w-7 h-7" />
+          <div className="font-bold text-white mb-2 text-center w-full">Thông tin liên hệ</div>
+          <div className="flex flex-col items-center gap-2">
+            {/* Số điện thoại */}
+            <a href="tel:0971704417" title="Gọi 0971704417" className="flex items-center gap-2 mb-2 px-4 py-2 rounded-full bg-blue-700 hover:bg-green-500 transition text-white text-base select-all shadow-lg font-normal">
+              <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Điện thoại" className="w-6 h-6" />
+              0971704417
             </a>
-            {/* Facebook */}
-            <a href="#" target="_blank" rel="noopener noreferrer" title="Facebook">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" className="w-7 h-7" style={{ filter: 'invert(32%) sepia(99%) saturate(7492%) hue-rotate(203deg) brightness(99%) contrast(101%)' }} />
-            </a>
-            {/* Gmail */}
-            <a href="#" target="_blank" rel="noopener noreferrer" title="Gmail">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Gmail" className="w-7 h-7" style={{ filter: 'invert(36%) sepia(99%) saturate(7492%) hue-rotate(357deg) brightness(99%) contrast(101%)' }} />
-            </a>
-            {/* TikTok */}
-            <a href="#" target="_blank" rel="noopener noreferrer" title="TikTok">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" className="w-7 h-7" style={{ filter: 'invert(60%) sepia(99%) saturate(7492%) hue-rotate(175deg) brightness(99%) contrast(101%)' }} />
-            </a>
-            {/* GitHub */}
-            <a href="#" target="_blank" rel="noopener noreferrer" title="GitHub">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" className="w-7 h-7" style={{ filter: 'invert(1) drop-shadow(0 0 2px #fff)' }} />
-            </a>
+            {/* 3 icon mạng xã hội */}
+            <div className="flex flex-row gap-6 items-center justify-center mt-2">
+              {/* Zalo */}
+              <div className="flex flex-col items-center group">
+                <a href="https://zalo.me/0971704417" target="_blank" rel="noopener noreferrer" title="Zalo" className="flex flex-col items-center">
+                  <span className="relative">
+                    <img src="https://img.icons8.com/color/48/000000/zalo.png" alt="Zalo" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-blue-400 transition" />
+                    <span className="absolute left-1/2 -translate-x-1/2 -top-8 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-2 py-1 pointer-events-none transition">Nhấn để mở Zalo</span>
+                  </span>
+                  <span className="text-xs text-white mt-1">Zalo</span>
+                </a>
+              </div>
+              {/* Facebook */}
+              <div className="flex flex-col items-center group">
+                <a href="https://www.facebook.com/vanthinh.nguyen.52142" target="_blank" rel="noopener noreferrer" title="Facebook" className="flex flex-col items-center">
+                  <span className="relative">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-blue-500 transition" />
+                    <span className="absolute left-1/2 -translate-x-1/2 -top-8 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-2 py-1 pointer-events-none transition">Nhấn để mở Facebook</span>
+                  </span>
+                  <span className="text-xs text-white mt-1">Facebook</span>
+                </a>
+              </div>
+              {/* TikTok */}
+              <div className="flex flex-col items-center group">
+                <a href="https://www.tiktok.com/@vtn_nvt" target="_blank" rel="noopener noreferrer" title="TikTok" className="flex flex-col items-center">
+                  <span className="relative">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok--v1.png" alt="TikTok" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-pink-500 transition" />
+                    <span className="absolute left-1/2 -translate-x-1/2 -top-8 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-2 py-1 pointer-events-none transition">Nhấn để mở TikTok</span>
+                  </span>
+                  <span className="text-xs text-white mt-1">TikTok</span>
+                </a>
+              </div>
+            </div>
           </div>
           {/* Dòng bản quyền dưới icon */}
           <div className="mt-4 text-center text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>

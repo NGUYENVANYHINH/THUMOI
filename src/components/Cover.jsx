@@ -113,8 +113,8 @@ function Cover({ onOpenCard }) {
       {/* Bóng tròn xanh dương đậm lớn, trên trái, floatY */}
       <div className="absolute -top-24 -left-24 w-72 h-72 bg-blue-700 rounded-full opacity-20 z-10" style={{animation: 'floatY 7s ease-in-out infinite'}}></div>
       {/* Mũ tốt nghiệp lớn trên chữ YOU'VE GOT AN */}
-      <div className="absolute left-1/2" style={{top: '70px', zIndex: 30, animation: 'gentleFloat 4s ease-in-out infinite'}}>
-        <img src="https://i.postimg.cc/L4BHXwfh/illustration-of-graduation-cap-icon-free-png.webp" alt="Graduation Cap" className="w-28 h-auto" />
+      <div className="absolute left-1/2 top-10 md:top-16 -translate-x-1/2 z-30" style={{animation: 'gentleFloat 4s ease-in-out infinite'}}>
+        <img src="https://i.postimg.cc/L4BHXwfh/illustration-of-graduation-cap-icon-free-png.webp" alt="Graduation Cap" className="w-20 md:w-28 h-auto" />
       </div>
       {/* Bóng tròn xanh dương nhạt lớn, dưới phải, scalePulse */}
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-300 rounded-full opacity-20 z-10" style={{animation: 'scalePulse 9s ease-in-out infinite'}}></div>
@@ -126,7 +126,7 @@ function Cover({ onOpenCard }) {
       <div className="absolute top-1/2 right-10 w-12 h-12 bg-blue-500 rounded-full opacity-20 z-10" style={{animation: 'scalePulse 6s ease-in-out infinite'}}></div>
       <div className="relative z-20 w-full max-w-xl mx-4 flex flex-col items-center py-10 px-2">
         {/* Hiệu ứng cọ vẽ xanh đậm cho tiêu đề chính */}
-        <div className="w-full flex flex-col items-center relative" style={{marginBottom: 36}}>
+        <div className="w-full flex flex-col items-center relative pt-20 md:pt-28" style={{marginBottom: 36}}>
           <svg width="340" height="90" viewBox="0 0 340 90" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-[-55px]">
             <path d="M10 50 Q 60 15 170 45 Q 280 75 330 40" stroke="#dbeafe" strokeWidth="36" strokeLinecap="round" fill="none" opacity="0.8"/>
           </svg>
