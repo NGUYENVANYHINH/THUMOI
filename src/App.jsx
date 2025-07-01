@@ -120,7 +120,11 @@ function App() {
             <div className="card__face card__face--back">
               <div 
                 className="min-h-screen overflow-y-auto relative bg-cover bg-center"
-                style={{ backgroundImage: "url('https://i.postimg.cc/XYccxN9b/ANH.jpg')" }}
+                style={{ 
+                  backgroundImage: "url('https://i.postimg.cc/XYccxN9b/ANH.jpg')",
+                  touchAction: 'pan-y',
+                  WebkitOverflowScrolling: 'touch'
+                }}
               >
                 <div className="absolute inset-0 bg-black bg-opacity-30" />
                 <div className="container mx-auto px-4 py-8 relative">
