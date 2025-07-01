@@ -33,4 +33,26 @@
 .card__face--back {
   transform: rotateY(180deg);
   overflow-y: auto; /* Allow scrolling on the back face */
+}
+
+@media (max-width: 768px) {
+  .scene {
+    perspective: none !important;
+  }
+  .card {
+    transform: none !important;
+    transition: none !important;
+  }
+  .card__face {
+    position: static !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+    overflow: visible !important;
+  }
+  .card__face--back {
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
 } 

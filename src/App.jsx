@@ -8,6 +8,7 @@ import './assets/3d-flip.css'
 
 function App() {
   const [isEnvelopeOpen, setIsEnvelopeOpen] = useState(false);
+  const [showNameInput, setShowNameInput] = useState(false);
   const [isCardOpen, setIsCardOpen] = useState(false)
   const [showGreeting, setShowGreeting] = useState(false);
   const [greetingFadeOut, setGreetingFadeOut] = useState(false);
@@ -24,8 +25,14 @@ function App() {
     }
   };
 
+  const handleEnvelopeOpen = () => {
+    setIsEnvelopeOpen(true);
+    setShowNameInput(true);
+  };
+
   const handleOpenCard = (info) => {
     setUserInfo(info)
+    setShowNameInput(false);
     setIsCardOpen(true)
     setShowGreeting(true)
     setGreetingFadeOut(false)
@@ -52,7 +59,7 @@ function App() {
       secondAudio.play().catch(e => console.error("Card audio failed to play", e));
     }
 
-    // Sau 3.2s, bắt đầu fade out greeting, sau 1s nữa thì ẩn greeting
+    // Sau 2s, hiện note greeting, sau 4s fadeout, sau 1s nữa thì ẩn greeting
     setTimeout(() => setShowGreetingNote(true), 2000);
     setTimeout(() => setGreetingFadeOut(true), 6000);
     setTimeout(() => setShowGreeting(false), 7000);
@@ -96,9 +103,13 @@ function App() {
       <audio ref={envelopeAudioRef} src="https://media.vocaroo.com/mp3/1nGEVwVF4DFY" preload="auto" loop />
       <audio ref={cardAudioRef} src="https://media.vocaroo.com/mp3/1fJ7Gnk58btp" preload="auto" loop />
       
-      {!isEnvelopeOpen && <Envelope onOpen={() => setIsEnvelopeOpen(true)} onPlayMusic={handlePlayMusic} />}
+      {!isEnvelopeOpen && <Envelope onOpen={handleEnvelopeOpen} onPlayMusic={handlePlayMusic} />}
 
-      {isEnvelopeOpen && showGreeting && (
+      {isEnvelopeOpen && showNameInput && (
+        <Cover onOpenCard={handleOpenCard} />
+      )}
+
+      {isEnvelopeOpen && !showNameInput && showGreeting && (
         <div className={`fixed inset-0 flex flex-col items-center justify-center z-50 greeting-bg ${greetingFadeOut ? 'greeting-fadeout' : ''}`}>
           <div className={`text-3xl font-bold text-blue-700 drop-shadow-lg greeting-animate`}>
             Xin chào {userInfo.pronoun} {capitalizeName(userInfo.name)}!
@@ -111,12 +122,9 @@ function App() {
         </div>
       )}
 
-      {isEnvelopeOpen && !showGreeting && (
+      {isEnvelopeOpen && !showNameInput && !showGreeting && isCardOpen && (
         <div className="scene">
-          <div className={`card ${isCardOpen ? 'is-flipped' : ''}`}>
-            <div className="card__face card__face--front">
-              <Cover onOpenCard={handleOpenCard} />
-            </div>
+          <div className={`card is-flipped`}>
             <div className="card__face card__face--back">
               <div 
                 className="min-h-screen overflow-y-auto relative bg-cover bg-center"
@@ -130,8 +138,6 @@ function App() {
                 <div className="container mx-auto px-4 py-8 relative">
                   <div className="space-y-8">
                     <MainCard userInfo={userInfo} />
-                    {/* <Notes /> */}
-                    {/* <Social /> */}
                   </div>
                 </div>
               </div>
