@@ -141,7 +141,7 @@ function Cover({ onOpenCard }) {
           <svg width="170" height="36" viewBox="0 0 170 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute">
             <path d="M10 28 Q 130 6 160 18" stroke="#93c5fd" strokeWidth="16" strokeLinecap="round" fill="none" opacity="0.7"/>
           </svg>
-          <span className="relative text-2xl italic font-bold text-blue-700" style={{fontFamily: 'cursive', marginTop: 10, letterSpacing: '1px', WebkitTextStroke: '1.2px #2563eb', color: '#2563eb'}}>
+          <span className="relative text-2xl italic font-bold text-blue-700" style={{fontFamily: 'Dancing Script, cursive', marginTop: 10, letterSpacing: '1px', WebkitTextStroke: '1.2px #2563eb', color: '#2563eb'}}>
             GRADUATION
           </span>
         </div>

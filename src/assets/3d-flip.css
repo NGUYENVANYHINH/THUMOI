@@ -9,6 +9,7 @@
   height: 100%;
   position: relative;
   transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
@@ -20,7 +21,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   overflow: hidden; /* Hide overflowing content */
 }
