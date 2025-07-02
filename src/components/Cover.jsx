@@ -109,6 +109,16 @@ function Cover({ onOpenCard }) {
           color: #101a36;
           border: 2px solid #34d399;
         }
+        body, html {
+          background: #fff !important;
+          color-scheme: light;
+        }
+        @media (prefers-color-scheme: dark) {
+          body, html {
+            background: #fff !important;
+            color-scheme: light;
+          }
+        }
       `}</style>
       {/* Bóng tròn xanh dương đậm lớn, trên trái, floatY */}
       <div className="absolute -top-24 -left-24 w-72 h-72 bg-blue-700 rounded-full opacity-20 z-10" style={{animation: 'floatY 7s ease-in-out infinite'}}></div>
@@ -144,6 +154,14 @@ function Cover({ onOpenCard }) {
           <span className="relative text-2xl italic font-bold text-blue-700" style={{fontFamily: 'Dancing Script, cursive', marginTop: 10, letterSpacing: '1px', WebkitTextStroke: '1.2px #2563eb', color: '#2563eb'}}>
             GRADUATION
           </span>
+          {/* Hiển thị preview Anh Thịnh ngay dưới GRADUATION */}
+          {name.trim() && pronoun?.value && (
+            <div className="w-full flex justify-center mt-2">
+              <span className="text-green-700 font-semibold text-lg">
+                Thân mời {pronoun.value} {name.trim()}
+              </span>
+            </div>
+          )}
         </div>
         {/* Nội dung chính */}
         <div className="mb-6 text-center mt-2 relative flex flex-col items-center">
@@ -156,28 +174,7 @@ function Cover({ onOpenCard }) {
         </div>
         <form className="space-y-6 w-full max-w-md mx-auto flex flex-col items-center" onSubmit={e => {e.preventDefault(); handleOpenCard();}}>
           <div className="w-full flex flex-col items-center">
-            {/* Input tên trước */}
-            <label className="block text-sm font-semibold text-blue-700 mb-2 text-left w-3/5 transition-all duration-300">
-              Tên của bạn
-            </label>
-            <div className={`transition-all duration-300 ${inputFocus ? 'w-full' : 'w-3/5'} mb-3`} style={{maxWidth: 400}}>
-              <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-blue-300 text-xl pointer-events-none">
-                  <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4" stroke="#60a5fa" strokeWidth="2"/></svg>
-                </span>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  onFocus={() => setInputFocus(true)}
-                  onBlur={() => setInputFocus(false)}
-                  className="w-full custom-modern-input focus:outline-none"
-                  placeholder="Nhập tên của bạn..."
-                  style={{fontFamily: 'inherit'}}
-                />
-              </div>
-            </div>
-            {/* Dropdown xưng hô sau */}
+            {/* Dropdown xưng hô trước */}
             <label className="block text-sm font-semibold text-blue-700 mb-2 text-left w-3/5 transition-all duration-300">
               Xưng hô
             </label>
@@ -249,14 +246,28 @@ function Cover({ onOpenCard }) {
                 instanceId="pronoun-select"
               />
             </div>
-            {/* Hiển thị preview Anh Thịnh */}
-            {name.trim() && pronoun?.value && (
-              <div className="w-full flex justify-center mb-2">
-                <span className="inline-block px-4 py-1 rounded-full bg-green-50 text-green-700 font-semibold text-lg shadow-sm border border-green-200">
-                  {pronoun.value} {name.trim()}
+            {/* Input tên sau, chỉ cho nhập khi đã chọn danh xưng */}
+            <label className="block text-sm font-semibold text-blue-700 mb-2 text-left w-3/5 transition-all duration-300">
+              Tên của bạn
+            </label>
+            <div className={`transition-all duration-300 ${inputFocus ? 'w-full' : 'w-3/5'} mb-3`} style={{maxWidth: 400}}>
+              <div className="relative">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-blue-300 text-xl pointer-events-none">
+                  <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4" stroke="#60a5fa" strokeWidth="2"/></svg>
                 </span>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  onFocus={() => setInputFocus(true)}
+                  onBlur={() => setInputFocus(false)}
+                  className="w-full custom-modern-input focus:outline-none"
+                  placeholder={pronoun?.value ? "Nhập tên của bạn..." : "Chọn xưng hô trước"}
+                  style={{fontFamily: 'inherit'}}
+                  disabled={!pronoun?.value}
+                />
               </div>
-            )}
+            </div>
           </div>
           {/* Nút Open Invitation màu nền xanh đậm */}
           <div className={`transition-all duration-300 ${inputFocus ? 'w-full' : 'w-3/5'}`} style={{maxWidth: 400}}>
