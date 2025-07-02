@@ -32,8 +32,15 @@ function Countdown({ targetDate }) {
   return (
     <div className="text-center">
       <p className="text-sm" style={{ color: '#F3F4F6', fontFamily: "'Cormorant Garamond', serif" }}>Thời gian còn lại đến lễ tốt nghiệp</p>
-      <div className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent">
-        {timeParts.map(part => `${part.value}`).join(' : ')}
+      <div className="flex justify-center gap-4 mt-2">
+        {timeParts.map((part, idx) => (
+          <div key={part.label} className="flex flex-col items-center">
+            <span className="text-2xl font-extrabold bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent">
+              {part.value}
+            </span>
+            <span className="text-xs text-yellow-100 mt-1 uppercase tracking-wide">{part.label}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -86,7 +93,7 @@ function MainCard({ userInfo }) {
           </div>
           <div className="flex flex-col items-center">
             <h1 className="text-sm md:text-base font-bold text-white">TRƯỜNG ĐẠI HỌC QUY NHƠN</h1>
-            <p className="text-xs md:text-sm font-bold text-white">Khoa Công nghệ thông tin</p>
+            <p className="text-xs md:text-sm font-bold text-white uppercase">Khoa Công nghệ thông tin</p>
           </div>
         </div>
 

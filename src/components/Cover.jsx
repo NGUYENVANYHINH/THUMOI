@@ -9,12 +9,12 @@ const PRONOUN_OPTIONS = PRONOUNS.map(p => ({ value: p, label: p }))
 
 function Cover({ onOpenCard }) {
   const [name, setName] = useState('')
-  const [pronoun, setPronoun] = useState(PRONOUN_OPTIONS[0])
+  const [pronoun, setPronoun] = useState(null)
   const [inputFocus, setInputFocus] = useState(false)
 
   const handleOpenCard = () => {
     if (name.trim()) {
-      onOpenCard({ name: name.trim(), pronoun: pronoun.value })
+      onOpenCard({ name: name.trim(), pronoun: pronoun?.value })
     }
   }
 
@@ -184,6 +184,7 @@ function Cover({ onOpenCard }) {
                 onChange={setPronoun}
                 options={PRONOUN_OPTIONS}
                 isSearchable={false}
+                placeholder="Chọn xưng hô..."
                 styles={{
                   control: (base, state) => ({
                     ...base,
@@ -241,7 +242,6 @@ function Cover({ onOpenCard }) {
                 })}
                 menuPlacement="auto"
                 menuPosition="fixed"
-                placeholder="Chọn xưng hô..."
                 inputId="pronoun-select"
                 instanceId="pronoun-select"
               />
