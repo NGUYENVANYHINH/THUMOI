@@ -100,51 +100,53 @@ function App() {
           animation: slideInLeft 1.2s cubic-bezier(.77,0,.18,1) both;
         }
       `}</style>
-      <audio ref={envelopeAudioRef} src="https://media.vocaroo.com/mp3/11pqNgcn4z0B" preload="auto" loop />
-      <audio ref={cardAudioRef} src="https://media.vocaroo.com/mp3/1fJ7Gnk58btp" preload="auto" loop />
-      
-      {!isEnvelopeOpen && <Envelope onOpen={handleEnvelopeOpen} onPlayMusic={handlePlayMusic} />}
+      <div className="min-h-screen bg-[#f4f7fb] flex flex-col items-center justify-center">
+        <audio ref={envelopeAudioRef} src="https://media.vocaroo.com/mp3/11pqNgcn4z0B" preload="auto" loop />
+        <audio ref={cardAudioRef} src="https://media.vocaroo.com/mp3/1fJ7Gnk58btp" preload="auto" loop />
+        
+        {!isEnvelopeOpen && <Envelope onOpen={handleEnvelopeOpen} onPlayMusic={handlePlayMusic} />}
 
-      {isEnvelopeOpen && showNameInput && (
-        <Cover onOpenCard={handleOpenCard} />
-      )}
+        {isEnvelopeOpen && showNameInput && (
+          <Cover onOpenCard={handleOpenCard} />
+        )}
 
-      {isEnvelopeOpen && !showNameInput && showGreeting && (
-        <div className={`fixed inset-0 flex flex-col items-center justify-center z-50 greeting-bg ${greetingFadeOut ? 'greeting-fadeout' : ''}`}>
-          <div className={`text-3xl font-bold text-blue-700 drop-shadow-lg greeting-animate`}>
-            Xin chào {userInfo.pronoun} {capitalizeName(userInfo.name)}!
-          </div>
-          {showGreetingNote && (
-            <div className="mt-6 text-lg font-semibold text-blue-800 slide-in-left">
-              Hãy dành một tí thời gian để xem nhé !
+        {isEnvelopeOpen && !showNameInput && showGreeting && (
+          <div className={`fixed inset-0 flex flex-col items-center justify-center z-50 greeting-bg ${greetingFadeOut ? 'greeting-fadeout' : ''}`}>
+            <div className={`text-3xl font-bold text-blue-700 drop-shadow-lg greeting-animate`}>
+              Xin chào {userInfo.pronoun} {capitalizeName(userInfo.name)}!
             </div>
-          )}
-        </div>
-      )}
+            {showGreetingNote && (
+              <div className="mt-6 text-lg font-semibold text-blue-800 slide-in-left">
+                Hãy dành một tí thời gian để xem nhé !
+              </div>
+            )}
+          </div>
+        )}
 
-      {isEnvelopeOpen && !showNameInput && !showGreeting && isCardOpen && (
-        <div className="scene">
-          <div className={`card is-flipped`}>
-            <div className="card__face card__face--back">
-              <div 
-                className="min-h-screen overflow-y-auto relative bg-cover bg-center"
-                style={{ 
-                  backgroundImage: "url('https://i.postimg.cc/XYccxN9b/ANH.jpg')",
-                  touchAction: 'pan-y',
-                  WebkitOverflowScrolling: 'touch'
-                }}
-              >
-                <div className="absolute inset-0 bg-black bg-opacity-30" />
-                <div className="container mx-auto px-4 py-8 relative">
-                  <div className="space-y-8">
-                    <MainCard userInfo={userInfo} />
+        {isEnvelopeOpen && !showNameInput && !showGreeting && isCardOpen && (
+          <div className="scene">
+            <div className={`card is-flipped`}>
+              <div className="card__face card__face--back">
+                <div 
+                  className="min-h-screen overflow-y-auto relative bg-cover bg-center"
+                  style={{ 
+                    backgroundImage: "url('https://i.postimg.cc/XYccxN9b/ANH.jpg')",
+                    touchAction: 'pan-y',
+                    WebkitOverflowScrolling: 'touch'
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-30" />
+                  <div className="container mx-auto px-4 py-8 relative">
+                    <div className="space-y-8">
+                      <MainCard userInfo={userInfo} />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </>
   )
 }

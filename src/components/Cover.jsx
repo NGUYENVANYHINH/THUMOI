@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Select from 'react-select'
+import makeAnimated from 'react-select/animated'
 
 const PRONOUNS = [
   'Anh', 'Chị', 'Em', 'Cô', 'Dì', 'Chú', 'Bác', 'Ông', 'Bà', 'Bạn', 'Thầy', 'Cô giáo'
@@ -185,6 +186,7 @@ function Cover({ onOpenCard }) {
                 options={PRONOUN_OPTIONS}
                 isSearchable={false}
                 placeholder="Chọn xưng hô..."
+                components={makeAnimated()}
                 styles={{
                   control: (base, state) => ({
                     ...base,
@@ -241,7 +243,6 @@ function Cover({ onOpenCard }) {
                   },
                 })}
                 menuPlacement="auto"
-                menuPosition="fixed"
                 inputId="pronoun-select"
                 instanceId="pronoun-select"
               />
