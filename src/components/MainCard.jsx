@@ -246,9 +246,9 @@ function MainCard({ userInfo, lang = 'vi' }) {
         </div>
 
         {/* Thời gian & Địa điểm */}
-        <div className={`flex flex-row justify-center items-stretch gap-0 my-6 max-w-lg ${sectionClass(3)}`}> {/* idx 3 */}
+        <div className={`flex flex-row justify-center items-stretch gap-0 my-6 w-full max-w-2xl mx-auto min-h-[140px] ${sectionClass(3)}`}> {/* idx 3 */}
           {/* Ngăn thời gian */}
-          <div className="flex-1 bg-white/10 backdrop-blur-md rounded-l-2xl shadow-lg p-4 flex flex-col items-center justify-center">
+          <div className="flex-1 bg-white/10 backdrop-blur-md rounded-l-2xl shadow-lg p-6 flex flex-col items-center justify-center">
             <div className="text-base md:text-lg mb-2 bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}>Thời gian</div>
             <div className="flex items-center justify-center gap-2 mb-1">
               <span className="text-2xl md:text-3xl bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}>08:00</span>
@@ -257,10 +257,10 @@ function MainCard({ userInfo, lang = 'vi' }) {
               <span>Thứ Sáu, 25/07/2025</span>
             </div>
           </div>
-          {/* Border dọc */}
-          <div className="w-px bg-gray-300 mx-0 my-4"></div>
+          {/* Border dọc full height */}
+          <div className="w-px bg-gray-300 self-stretch"></div>
           {/* Ngăn địa điểm */}
-          <div className="flex-1 bg-white/10 backdrop-blur-md rounded-r-2xl shadow-lg p-4 flex flex-col items-center justify-center">
+          <div className="flex-1 bg-white/10 backdrop-blur-md rounded-r-2xl shadow-lg p-6 flex flex-col items-center justify-center">
             <div className="text-base md:text-lg mb-2 bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}>Địa điểm</div>
             <div className="flex items-center justify-center gap-2 mb-1">
               <span className="text-xl md:text-2xl bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}>Hội trường B</span>
