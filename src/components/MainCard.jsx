@@ -182,7 +182,13 @@ function MainCard({ userInfo, lang = 'vi' }) {
 
         {/* Lời mời và avatar */}
         <div className={`my-6 text-lg ${sectionClass(1)}`}> {/* idx 1 */}
-          <p style={{ fontFamily: "'Cormorant Garamond', serif" }}>Thân mời {displayName.toUpperCase()} tham gia và chung vui lễ tốt nghiệp của</p>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            Thân mời
+            <span className="bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent uppercase font-bold ml-2 mr-2">
+              {displayNameWithCap}
+            </span>
+            tham gia và chung vui lễ tốt nghiệp của
+          </p>
           <div className="flex justify-center my-2">
             <img 
               src="https://i.postimg.cc/4dyzhgdG/freepik-adjust-80621.png" 
@@ -273,8 +279,10 @@ function MainCard({ userInfo, lang = 'vi' }) {
         {/* Lời cuối thiệp */}
         <div className={`mt-8 text-lg md:text-xl leading-relaxed ${sectionClass(5)}`}> {/* idx 5 */}
           <span style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-            Sự hiện diện của {displayNameWithCap} là niềm vinh dự lớn lao, góp phần làm nên ý nghĩa trọn vẹn cho ngày lễ tốt nghiệp này.<br />
-            <span className="block mt-2" style={{ fontWeight: 700 }}>Thân mời {userInfo?.pronoun || 'Bạn'}</span>
+            Sự hiện diện của <span className="bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontWeight: 700, marginLeft: 4, marginRight: 4 }}>{displayNameWithCap}</span> là niềm vinh dự lớn lao, góp phần làm nên ý nghĩa trọn vẹn cho ngày lễ tốt nghiệp này.<br />
+            <span className="block mt-2" style={{ fontWeight: 700 }}>
+              Thân mời <span className="bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontWeight: 700, marginLeft: 4 }}>{userInfo?.pronoun || 'Bạn'}</span>
+            </span>
           </span>
         </div>
         <div className={`mt-6 text-left ${sectionClass(6)}`}> {/* idx 6 */}
