@@ -187,7 +187,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
             <span className="bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent uppercase font-bold ml-2 mr-2">
               {displayNameWithCap}
             </span>
-            tham gia và chung vui lễ tốt nghiệp của
+            tham dự và chung vui lễ tốt nghiệp của
           </p>
           <div className="flex justify-center my-2">
             <img 
