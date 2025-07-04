@@ -83,7 +83,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
     vi: {
       school: 'TRƯỜNG ĐẠI HỌC QUY NHƠN',
       faculty: 'Khoa Công nghệ thông tin',
-      invitation: (name) => `Thân mời ${name} tham gia và chung vui lễ tốt nghiệp của`,
+      invitation: (name) => `Thân mời ${name} tham dự và chung vui lễ tốt nghiệp của`,
       graduateTitle: 'Tân Cử Nhân',
       name: 'NGUYỄN VĂN THỊNH',
       major: 'Cử nhân: Công nghệ thông tin',
@@ -169,7 +169,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
         <div className={`flex justify-center items-center mb-6 ${sectionClass(0)}`}> {/* idx 0 */}
           <div className="h-10 w-10 md:h-14 md:w-14 mr-2 md:mr-3 rounded-full bg-white flex items-center justify-center p-1 shadow-md">
             <img 
-              src="https://i.postimg.cc/hjbBtddY/LOGO-removebg-preview.png" 
+              src="/LOGO-removebg-preview-Photoroom.png" 
               alt="Logo Trường Đại học Quy Nhơn" 
               className="h-full w-full"
             />
@@ -191,7 +191,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
           </p>
           <div className="flex justify-center my-2">
             <img 
-              src="https://i.postimg.cc/4dyzhgdG/freepik-adjust-80621.png" 
+              src="/freepik__adjust__80621.png" 
               alt="Trang trí dưới tên"
               className="w-32 md:w-48 object-contain"
               draggable="false"
@@ -206,13 +206,13 @@ function MainCard({ userInfo, lang = 'vi' }) {
           <div className="flex justify-center mb-0 mt-0">
             <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
               <img 
-                src="https://i.postimg.cc/ht63ppkV/avaata.jpg" 
+                src="/avaata.jpg" 
                 alt="Ảnh đại diện tân cử nhân" 
                 className="w-28 h-28 md:w-36 md:h-36 rounded-full shadow-lg object-cover absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
                 style={{ objectPosition: 'center top' }}
               />
               <img
-                src="https://i.postimg.cc/jS1Pf1pY/OPSKPI0-Photoroom.png"
+                src="/OPSKPI0-Photoroom.png"
                 alt="Khung viền avatar"
                 className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 rounded-full pointer-events-none translate-y-4 md:translate-y-6"
                 draggable="false"
@@ -231,7 +231,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
           </h1>
           <div className="flex justify-center my-2">
             <img 
-              src="https://i.postimg.cc/4dyzhgdG/freepik-adjust-80621.png" 
+              src="/freepik__adjust__80621.png" 
               alt="Trang trí dưới tên"
               className="w-32 md:w-48 object-contain"
               draggable="false"
@@ -263,7 +263,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
           <div className="flex-1 bg-white/10 backdrop-blur-md rounded-r-2xl shadow-lg p-6 flex flex-col items-center justify-center">
             <div className="text-base md:text-lg mb-2 bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}>Địa điểm</div>
             <div className="flex items-center justify-center gap-2 mb-1">
-              <span className="text-xl md:text-2xl bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}>Hội trường B</span>
+              <span className="text-lg md:text-xl bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}>Hội trường B</span>
             </div>
             <div className="text-sm md:text-base text-center text-white" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               <div>Đại học Quy Nhơn</div>
@@ -295,7 +295,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
           <div className="flex flex-col items-center gap-2">
             {/* Số điện thoại */}
             <a href="tel:0971704417" title="Gọi 0971704417" className="flex items-center gap-2 mb-2 px-4 py-2 rounded-full bg-blue-700 hover:bg-green-500 transition text-white text-base select-all shadow-lg" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Điện thoại" className="w-6 h-6" />
+              <img src="/phone.png" alt="Điện thoại" className="w-6 h-6" />
               0971704417
             </a>
             {/* 3 icon mạng xã hội */}
@@ -304,7 +304,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
               <div className="flex flex-col items-center group">
                 <a href="https://zalo.me/0971704417" target="_blank" rel="noopener noreferrer" title="Nhấn để mở Zalo" className="flex flex-col items-center" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   <span className="relative">
-                    <img src="https://img.icons8.com/color/48/000000/zalo.png" alt="Zalo" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-blue-400 transition" />
+                    <img src="/zalo.png" alt="Zalo" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-blue-400 transition" />
                     <span className="absolute left-1/2 -translate-x-1/2 -top-8 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-2 py-1 pointer-events-none transition">Nhấn để mở Zalo</span>
                   </span>
                   <span className="text-xs text-white mt-1">Zalo</span>
@@ -314,7 +314,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
               <div className="flex flex-col items-center group">
                 <a href="https://www.facebook.com/vanthinh.nguyen.52142" target="_blank" rel="noopener noreferrer" title="Nhấn để mở Facebook" className="flex flex-col items-center" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   <span className="relative">
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-blue-500 transition" />
+                    <img src="/facebook-new.png" alt="Facebook" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-blue-500 transition" />
                     <span className="absolute left-1/2 -translate-x-1/2 -top-8 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-2 py-1 pointer-events-none transition">Nhấn để mở Facebook</span>
                   </span>
                   <span className="text-xs text-white mt-1">Facebook</span>
@@ -324,7 +324,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
               <div className="flex flex-col items-center group">
                 <a href="https://www.tiktok.com/@vtn_nvt" target="_blank" rel="noopener noreferrer" title="Nhấn để mở TikTok" className="flex flex-col items-center" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   <span className="relative">
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok--v1.png" alt="TikTok" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-pink-500 transition" />
+                    <img src="/tiktok.png" alt="TikTok" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-pink-500 transition" />
                     <span className="absolute left-1/2 -translate-x-1/2 -top-8 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-2 py-1 pointer-events-none transition">Nhấn để mở TikTok</span>
                   </span>
                   <span className="text-xs text-white mt-1">TikTok</span>
@@ -340,9 +340,9 @@ function MainCard({ userInfo, lang = 'vi' }) {
             <div>Hãy liên hệ cho chúng tôi để biết thêm chi tiết</div>
             <div>Đừng quên giới thiệu cho bạn bè nhé</div>
             <div className="flex items-center gap-2 mt-1">
-              <img src="https://img.icons8.com/color/48/000000/zalo.png" alt="Zalo" className="w-4 h-4" />
+              <img src="/zalo.png" alt="Zalo" className="w-4 h-4" />
               <a href="https://zalo.me/0971704417" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 underline" style={{ fontWeight: 700, fontFamily: "'Cormorant Garamond', serif" }}>Zalo: 0971704417</a>
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="Email" className="w-4 h-4 ml-3" />
+              <img src="/new-post.png" alt="Email" className="w-4 h-4 ml-3" />
               <a href="mailto:nguyenvanthinh08042003@gmail.com" className="hover:text-blue-400 underline" style={{ fontWeight: 700, fontFamily: "'Cormorant Garamond', serif" }}>Email: nguyenvanthinh08042003@gmail.com</a>
             </div>
           </div>

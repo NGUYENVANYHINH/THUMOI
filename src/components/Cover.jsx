@@ -125,7 +125,7 @@ function Cover({ onOpenCard }) {
       <div className="absolute -top-24 -left-24 w-72 h-72 bg-blue-700 rounded-full opacity-20 z-10" style={{animation: 'floatY 7s ease-in-out infinite'}}></div>
       {/* Mũ tốt nghiệp lớn trên chữ YOU'VE GOT AN */}
       <div className="absolute left-1/2 top-10 md:top-16 -translate-x-1/2 z-30" style={{animation: 'gentleFloat 4s ease-in-out infinite'}}>
-        <img src="https://i.postimg.cc/L4BHXwfh/illustration-of-graduation-cap-icon-free-png.webp" alt="Graduation Cap" className="w-20 md:w-28 h-auto" />
+        <img src="/illustration-of-graduation-cap-icon-free-png.webp" alt="Graduation Cap" className="w-20 md:w-28 h-auto" />
       </div>
       {/* Bóng tròn xanh dương nhạt lớn, dưới phải, scalePulse */}
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-300 rounded-full opacity-20 z-10" style={{animation: 'scalePulse 9s ease-in-out infinite'}}></div>
@@ -296,7 +296,7 @@ function Cover({ onOpenCard }) {
         <div className="absolute top-10 right-10 w-8 h-8 bg-blue-200 rounded-full opacity-30 z-20"></div>
       </div>
       <img
-        src="https://i.postimg.cc/mD0JyQnm/diploma-152024-640.webp"
+        src="/diploma-152024_640.webp"
         alt="Bằng tốt nghiệp"
         className="absolute bottom-10 left-1/2 w-24 h-auto"
         style={{ zIndex: 10, animation: 'diplomaFloat 5s ease-in-out infinite' }}

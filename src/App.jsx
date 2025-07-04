@@ -130,7 +130,7 @@ function App() {
                 <div 
                   className="min-h-screen overflow-y-auto relative bg-cover bg-center"
                   style={{ 
-                    backgroundImage: "url('https://i.postimg.cc/XYccxN9b/ANH.jpg')",
+                    backgroundImage: "url('/ANH.jpg')",
                     touchAction: 'pan-y',
                     WebkitOverflowScrolling: 'touch'
                   }}
