@@ -46,7 +46,7 @@ function Countdown({ targetDate }) {
   );
 }
 
-function MainCard({ userInfo }) {
+function MainCard({ userInfo, lang = 'vi' }) {
   const displayName = (userInfo?.pronoun ? userInfo.pronoun + ' ' : '') + (userInfo?.name || 'Bạn');
   const targetDate = new Date('2025-07-25T07:30:00+07:00');
   const mainFont = "'Cormorant Garamond', serif";
@@ -79,9 +79,92 @@ function MainCard({ userInfo }) {
     return `transition-all duration-700 ease-out ${visibleSections.includes(idx) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`;
   }
 
+  const text = {
+    vi: {
+      school: 'TRƯỜNG ĐẠI HỌC QUY NHƠN',
+      faculty: 'Khoa Công nghệ thông tin',
+      invitation: (name) => `Thân mời ${name} tham gia và chung vui lễ tốt nghiệp của`,
+      graduateTitle: 'Tân Cử Nhân',
+      name: 'NGUYỄN VĂN THỊNH',
+      major: 'Cử nhân: Công nghệ thông tin',
+      specialization: 'Chuyên ngành: Công nghệ phần mềm',
+      university: 'Trường: ĐẠI HỌC QUY NHƠN',
+      course: 'Khóa: 2021 - 2025',
+      time: 'Thời gian',
+      date: 'Thứ Sáu, 25/07/2025',
+      location: 'Địa điểm',
+      hall: 'Hội trường B',
+      address: 'Đại học Quy Nhơn',
+      countdownTitle: 'Thời gian còn lại đến lễ tốt nghiệp',
+      presence: (name) => `Sự hiện diện của ${name} là niềm vinh dự lớn lao, góp phần làm nên ý nghĩa trọn vẹn cho ngày lễ tốt nghiệp này.`,
+      noteLabel: 'Lưu ý:',
+      note: 'Đừng quên giữ gìn cẩn thận tài sản cá nhân của mình trong ngày hôm đó nhé, để ngày vui trọn vẹn hơn.',
+      contact: 'Thông tin liên hệ',
+      phone: 'Gọi 0971704417',
+      zalo: 'Nhấn để mở Zalo',
+      facebook: 'Nhấn để mở Facebook',
+      tiktok: 'Nhấn để mở TikTok',
+      zaloLabel: 'Zalo',
+      facebookLabel: 'Facebook',
+      tiktokLabel: 'TikTok',
+      ad1: 'Đừng để ngày vui chỉ dừng lại ở lời nói!',
+      ad2: 'Bạn muốn có một tấm thiệp online độc đáo, sang trọng, mang dấu ấn riêng cho ngày đặc biệt?',
+      ad3: 'Hãy gửi thiệp online xịn sò, cá nhân hóa theo ý bạn – từ đám cưới, sinh nhật, tiệc mừng, lời chúc... Hãy để mình biến ý tưởng của bạn thành hiện thực!',
+      ad4: 'Hãy liên hệ cho chúng tôi để biết thêm chi tiết',
+      ad5: 'Đừng quên giới thiệu cho bạn bè nhé',
+      zaloContact: 'Zalo: 0971704417',
+      emailContact: 'Email: nguyenvanthinh08042003@gmail.com',
+      copyright: '© 2025 - Thiệp tốt nghiệp được thiết kế bởi Nguyễn Văn Thịnh',
+      days: 'ngày',
+      hours: 'giờ',
+      minutes: 'phút',
+      seconds: 'giây',
+    },
+    en: {
+      school: 'QUY NHON UNIVERSITY',
+      faculty: 'Faculty of Information Technology',
+      invitation: (name) => `Dear ${name}, you are cordially invited to the graduation ceremony of`,
+      graduateTitle: 'Graduate',
+      name: 'NGUYEN VAN THINH',
+      major: 'Degree: Information Technology',
+      specialization: 'Specialization: Software Engineering',
+      university: 'University: QUY NHON UNIVERSITY',
+      course: 'Course: 2021 - 2025',
+      time: 'Time',
+      date: 'Friday, 25/07/2025',
+      location: 'Location',
+      hall: 'Hall B',
+      address: 'Quy Nhon University',
+      countdownTitle: 'Countdown to Graduation Ceremony',
+      presence: (name) => `Your presence is a great honor and will make this graduation day even more meaningful.`,
+      noteLabel: 'Note:',
+      note: 'Please take care of your personal belongings on this special day for a perfect celebration.',
+      contact: 'Contact Information',
+      phone: 'Call 0971704417',
+      zalo: 'Click to open Zalo',
+      facebook: 'Click to open Facebook',
+      tiktok: 'Click to open TikTok',
+      zaloLabel: 'Zalo',
+      facebookLabel: 'Facebook',
+      tiktokLabel: 'TikTok',
+      ad1: `Don't let your happy day stop at words!`,
+      ad2: 'Want a unique, classy, personalized online card for your special day?',
+      ad3: 'Send a cool, personalized online card for weddings, birthdays, parties, wishes... Let me turn your ideas into reality!',
+      ad4: 'Contact us for more details',
+      ad5: "Don't forget to share with your friends!",
+      zaloContact: 'Zalo: 0971704417',
+      emailContact: 'Email: nguyenvanthinh08042003@gmail.com',
+      copyright: '© 2025 - Graduation card designed by Nguyen Van Thinh',
+      days: 'days',
+      hours: 'hours',
+      minutes: 'minutes',
+      seconds: 'seconds',
+    }
+  };
+
   return (
     <div style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-      <div className="max-w-4xl mx-auto text-center p-4 md:p-6" style={{ color: textColor }}>
+      <div className="w-full max-w-sm md:max-w-lg lg:max-w-2xl xl:max-w-4xl mx-auto text-center p-4 md:p-6" style={{ color: textColor }}>
         {/* Logo và trường */}
         <div className={`flex justify-center items-center mb-6 ${sectionClass(0)}`}> {/* idx 0 */}
           <div className="h-10 w-10 md:h-14 md:w-14 mr-2 md:mr-3 rounded-full bg-white flex items-center justify-center p-1 shadow-md">
@@ -99,7 +182,7 @@ function MainCard({ userInfo }) {
 
         {/* Lời mời và avatar */}
         <div className={`my-6 text-lg ${sectionClass(1)}`}> {/* idx 1 */}
-          <p style={{ fontFamily: "'Cormorant Garamond', serif" }}>Thân mời <span style={{ color: '#FFD700', fontWeight: 700 }}>{displayName.toUpperCase()}</span> tham gia và chung vui lễ tốt nghiệp của</p>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif" }}>Thân mời {displayName.toUpperCase()} tham gia và chung vui lễ tốt nghiệp của</p>
           <div className="flex justify-center my-2">
             <img 
               src="https://i.postimg.cc/4dyzhgdG/freepik-adjust-80621.png" 
@@ -183,15 +266,15 @@ function MainCard({ userInfo }) {
         </div>
 
         {/* Đếm ngược */}
-        <div className={`bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-6 my-6 max-w-lg ${sectionClass(4)}`}> {/* idx 4 */}
+        <div className={`bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-6 my-6 w-full max-w-sm md:max-w-lg lg:max-w-2xl xl:max-w-4xl ${sectionClass(4)}`}> {/* idx 4 */}
           <Countdown targetDate={targetDate} />
         </div>
 
         {/* Lời cuối thiệp */}
         <div className={`mt-8 text-lg md:text-xl leading-relaxed ${sectionClass(5)}`}> {/* idx 5 */}
           <span style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-            Sự hiện diện của <span className="bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontWeight: 700 }}>{displayNameWithCap}</span> là niềm vinh dự lớn lao, góp phần làm nên ý nghĩa trọn vẹn cho ngày lễ tốt nghiệp này.<br />
-            <span className="block mt-2" style={{ fontWeight: 700 }}>Thân mời <span className="bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontWeight: 700 }}>{userInfo?.pronoun || 'Bạn'}</span></span>
+            Sự hiện diện của {displayNameWithCap} là niềm vinh dự lớn lao, góp phần làm nên ý nghĩa trọn vẹn cho ngày lễ tốt nghiệp này.<br />
+            <span className="block mt-2" style={{ fontWeight: 700 }}>Thân mời {userInfo?.pronoun || 'Bạn'}</span>
           </span>
         </div>
         <div className={`mt-6 text-left ${sectionClass(6)}`}> {/* idx 6 */}
@@ -211,7 +294,7 @@ function MainCard({ userInfo }) {
             <div className="flex flex-row gap-6 items-center justify-center mt-2">
               {/* Zalo */}
               <div className="flex flex-col items-center group">
-                <a href="https://zalo.me/0971704417" target="_blank" rel="noopener noreferrer" title="Zalo" className="flex flex-col items-center" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                <a href="https://zalo.me/0971704417" target="_blank" rel="noopener noreferrer" title="Nhấn để mở Zalo" className="flex flex-col items-center" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   <span className="relative">
                     <img src="https://img.icons8.com/color/48/000000/zalo.png" alt="Zalo" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-blue-400 transition" />
                     <span className="absolute left-1/2 -translate-x-1/2 -top-8 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-2 py-1 pointer-events-none transition">Nhấn để mở Zalo</span>
@@ -221,7 +304,7 @@ function MainCard({ userInfo }) {
               </div>
               {/* Facebook */}
               <div className="flex flex-col items-center group">
-                <a href="https://www.facebook.com/vanthinh.nguyen.52142" target="_blank" rel="noopener noreferrer" title="Facebook" className="flex flex-col items-center" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                <a href="https://www.facebook.com/vanthinh.nguyen.52142" target="_blank" rel="noopener noreferrer" title="Nhấn để mở Facebook" className="flex flex-col items-center" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   <span className="relative">
                     <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-blue-500 transition" />
                     <span className="absolute left-1/2 -translate-x-1/2 -top-8 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-2 py-1 pointer-events-none transition">Nhấn để mở Facebook</span>
@@ -231,7 +314,7 @@ function MainCard({ userInfo }) {
               </div>
               {/* TikTok */}
               <div className="flex flex-col items-center group">
-                <a href="https://www.tiktok.com/@vtn_nvt" target="_blank" rel="noopener noreferrer" title="TikTok" className="flex flex-col items-center" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                <a href="https://www.tiktok.com/@vtn_nvt" target="_blank" rel="noopener noreferrer" title="Nhấn để mở TikTok" className="flex flex-col items-center" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   <span className="relative">
                     <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok--v1.png" alt="TikTok" className="w-8 h-8 rounded-full bg-blue-700 p-1 group-hover:bg-pink-500 transition" />
                     <span className="absolute left-1/2 -translate-x-1/2 -top-8 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-2 py-1 pointer-events-none transition">Nhấn để mở TikTok</span>
@@ -257,7 +340,7 @@ function MainCard({ userInfo }) {
           </div>
         </div>
         <div className="w-full text-center text-xs italic mt-2" style={{ color: '#FFD700' }}>
-           © 2025 - Thiết kế bởi NguyenVanThinh
+           © 2025 - Thiệp tốt nghiệp được thiết kế bởi Nguyễn Văn Thịnh
         </div>
       </div>
     </div>

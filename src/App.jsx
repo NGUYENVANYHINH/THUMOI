@@ -100,7 +100,7 @@ function App() {
           animation: slideInLeft 1.2s cubic-bezier(.77,0,.18,1) both;
         }
       `}</style>
-      <div className="min-h-screen bg-[#f4f7fb] flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-[#e3f0fa] flex flex-col items-stretch">
         <audio ref={envelopeAudioRef} src="https://media.vocaroo.com/mp3/11pqNgcn4z0B" preload="auto" loop />
         <audio ref={cardAudioRef} src="https://media.vocaroo.com/mp3/1fJ7Gnk58btp" preload="auto" loop />
         
