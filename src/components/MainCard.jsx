@@ -48,7 +48,7 @@ function Countdown({ targetDate }) {
 
 function MainCard({ userInfo, lang = 'vi' }) {
   const displayName = (userInfo?.pronoun ? userInfo.pronoun + ' ' : '') + (userInfo?.name || 'Bạn');
-  const targetDate = new Date('2025-07-25T07:30:00+07:00');
+  const targetDate = new Date('2025-07-31T07:30:00+07:00');
   const mainFont = "'Cormorant Garamond', serif";
   const textColor = '#F3F4F6';
 
@@ -254,7 +254,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
               <span className="text-2xl md:text-3xl bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}>08:00</span>
             </div>
             <div className="text-sm md:text-base text-center text-white" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-              <span>Thứ Sáu, 25/07/2025</span>
+              <span>Thứ Năm, 31/07/2025</span>
             </div>
           </div>
           {/* Border dọc full height */}
