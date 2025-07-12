@@ -93,7 +93,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
       time: 'Thời gian',
       date: 'Thứ Sáu, 25/07/2025',
       location: 'Địa điểm',
-      hall: 'Hội trường B',
+      hall: 'Hội trường A',
       address: 'Đại học Quy Nhơn',
       countdownTitle: 'Thời gian còn lại đến lễ tốt nghiệp',
       presence: (name) => `Sự hiện diện của ${name} là niềm vinh dự lớn lao, góp phần làm nên ý nghĩa trọn vẹn cho ngày lễ tốt nghiệp này.`,
@@ -263,7 +263,7 @@ function MainCard({ userInfo, lang = 'vi' }) {
           <div className="flex-1 bg-white/10 backdrop-blur-md rounded-r-2xl shadow-lg p-6 flex flex-col items-center justify-center">
             <div className="text-base md:text-lg mb-2 bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}>Địa điểm</div>
             <div className="flex items-center justify-center gap-2 mb-1">
-              <span className="text-lg md:text-xl bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}>Hội trường B</span>
+              <span className="text-lg md:text-xl bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}>Hội trường A</span>
             </div>
             <div className="text-sm md:text-base text-center text-white" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               <div>Đại học Quy Nhơn</div>
