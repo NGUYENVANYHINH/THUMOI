@@ -3,7 +3,7 @@ import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
 
 const PRONOUNS = [
-  'Anh', 'Chị', 'Em', 'Cô', 'Dì', 'Chú', 'Dượng', 'Thím', 'Bác', 'Ông', 'Bà', 'Bạn', 'Thầy', 'Cô giáo'
+  'Anh', 'Bà', 'Bác', 'Bạn', 'Chị', 'Chú', 'Cô', 'Cô giáo', 'Dì', 'Dượng', 'Em', 'Ông', 'Thầy', 'Thím'
 ]
 
 const PRONOUN_OPTIONS = PRONOUNS.map(p => ({ value: p, label: p }))
