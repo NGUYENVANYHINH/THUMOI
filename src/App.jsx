@@ -75,6 +75,20 @@ function App() {
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;700&display=swap');
+        /* Khóa màu sắc, ngăn chặn chế độ tối */
+        * {
+          color-scheme: light !important;
+        }
+        body, html, div, span, p, h1, h2, h3, h4, h5, h6 {
+          color-scheme: light !important;
+        }
+        /* Đảm bảo màu nền và text luôn đúng */
+        .bg-black, .bg-white, .bg-\[#e3f0fa\] {
+          background-color: inherit !important;
+        }
+        .text-white, .text-yellow-100, .text-yellow-300, .text-yellow-500, .text-yellow-700 {
+          color: inherit !important;
+        }
         @keyframes slideInRight {
           0% { opacity: 0; transform: translateX(100vw); }
           60% { opacity: 1; }

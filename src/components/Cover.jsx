@@ -120,6 +120,25 @@ function Cover({ onOpenCard }) {
             color-scheme: light;
           }
         }
+        /* Khóa màu sắc, ngăn chặn chế độ tối */
+        * {
+          color-scheme: light !important;
+        }
+        body, html, div, span, p, h1, h2, h3, h4, h5, h6, input, button, select {
+          color-scheme: light !important;
+          background-color: inherit !important;
+        }
+        /* Đảm bảo text luôn có màu rõ ràng */
+        .text-blue-700, .text-blue-800, .text-green-700, .text-red-500 {
+          color: inherit !important;
+        }
+        /* Khóa màu nền */
+        .bg-white {
+          background-color: #ffffff !important;
+        }
+        .bg-blue-700, .bg-blue-300, .bg-purple-200, .bg-lime-200, .bg-blue-500, .bg-blue-200 {
+          background-color: inherit !important;
+        }
       `}</style>
       {/* Bóng tròn xanh dương đậm lớn, trên trái, floatY */}
       <div className="absolute -top-24 -left-24 w-72 h-72 bg-blue-700 rounded-full opacity-20 z-10" style={{animation: 'floatY 7s ease-in-out infinite'}}></div>
