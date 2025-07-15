@@ -75,12 +75,13 @@ function App() {
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;700&display=swap');
-        /* Khóa màu sắc, ngăn chặn chế độ tối */
-        * {
-          color-scheme: light !important;
+        html, body {
+          color-scheme: light;
         }
-        body, html, div, span, p, h1, h2, h3, h4, h5, h6 {
-          color-scheme: light !important;
+        @media (prefers-color-scheme: dark) {
+          html, body {
+            color-scheme: light;
+          }
         }
         /* Đảm bảo màu nền và text luôn đúng */
         .bg-black, .bg-white, .bg-\[#e3f0fa\] {
